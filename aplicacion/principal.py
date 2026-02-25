@@ -7,10 +7,10 @@ from fastapi import FastAPI
 from .base_datos import motor
 from .modelos import Base
 
-app = FastAPI()
+app = FastAPI(title="SISMARL-JAL API")
 
 Base.metadata.create_all(bind=motor)
 
 @app.get("/")
 def inicio():
-    return {"mensaje": "Sistema SISMARL-JAL funcionando correctamente"}
+    return {"mensaje": "Sistema SISMARL-JAL operativo"}
