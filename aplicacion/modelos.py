@@ -3,11 +3,7 @@ Archivo: modelos.py
 Define las tablas del sistema.
 """
 
-<<<<<<< HEAD
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
-=======
 from sqlalchemy import Boolean, Column, Integer, String, DateTime, ForeignKey
->>>>>>> Bugs
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from .base_datos import Base
@@ -40,11 +36,6 @@ class Vehiculo(Base):
     id = Column(Integer, primary_key=True, index=True)
     placa = Column(String(15), unique=True, nullable=False)
     modelo = Column(String(100), nullable=False)
-<<<<<<< HEAD
-    capacidad_kg = Column(Integer)
-    fecha_registro = Column(DateTime(timezone=True), server_default=func.now())
-=======
     capacidad_kg = Column(Integer, nullable=False)
     activo = Column(Boolean, default=True) 
     fecha_registro = Column(DateTime(timezone=True), server_default=func.now())
->>>>>>> Bugs
