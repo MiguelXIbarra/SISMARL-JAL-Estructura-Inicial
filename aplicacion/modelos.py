@@ -29,6 +29,11 @@ class Usuario(Base):
 
     fecha_creacion = Column(DateTime(timezone=True), server_default=func.now())
 
+    password_hash = Column(String(255), nullable=False)
+    rol_id = Column(Integer, ForeignKey("roles.id"))
+    intentos_fallidos = Column(Integer, default=0)
+    bloqueado = Column(Boolean, default=False)
+
 
 class Vehiculo(Base):
     __tablename__ = "vehiculos"
